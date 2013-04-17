@@ -1,0 +1,23 @@
+<h3>Darsteller</h3>
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+<table>
+  <tr class="ueberschrift">
+    <th>Name</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @darstellers.each do |darsteller| %>
+      <tr>
+        <td><%= darsteller.name %></td>
+        <td><%= link_to 'Edit', edit_darsteller_path(darsteller) %></td>
+        <td><%= link_to 'Destroy', darsteller, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br /><br>
+
+<%= link_to 'Neuen Darsteller erfassen', new_darsteller_path %>

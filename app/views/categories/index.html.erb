@@ -1,0 +1,25 @@
+<h3>Filmkategorien verwalten</h3>
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+<table>
+  <tr class="ueberschrift">
+    <th>Name</th>
+    <th>Anzahl</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+  <% @categories.each do |category| %>
+      <tr>
+        <td><%= link_to category.name,  category_path(category.id) %></td>
+        <td><%= category.films.count %></td>
+        <td><%= link_to 'Edit', edit_category_path(category) %></td>
+        <td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
+      </tr>
+  <% end %>
+</table>
+
+<br />
+
+<%= link_to 'Neue Kategorie erfassen', new_category_path %>

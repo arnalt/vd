@@ -1,0 +1,22 @@
+<%= render 'shared/error_messages' %>
+<div class="row">
+  <div class="span2 offset3">
+    <%= f.label :titel %>
+    <%= f.text_field :titel %>
+
+    <%= f.label :kategorie %>
+    <%= f.select :category_id, Category.all.map { |d| [d.name, d.id] }, prompt: "Bitte wählen Sie" %>
+
+    <%= f.label :laenge %>
+    <%= f.number_field :laenge %>
+
+    <%= f.label :land %>
+    <%= f.text_field :land %>
+
+    <%= f.label :jahr %>
+    <%= f.number_field :jahr %>
+  </div>
+</div>
+
+
+

@@ -1,0 +1,38 @@
+<% if @cat_name == nil %>
+    <h1>Filme anzeigen</h1>
+    <% if @notice != nil %>
+        <p id="notice"><%= @notice %></p>
+    <% end %>
+    <br><br>
+    <div>
+    <table>
+      <tr>
+        <td><%= image_tag(@film.image_url+"2") %></td>
+     </tr>
+      <tr >
+        <td><b>Titel:</b></td>
+        <td><%= @film.titel %></td>
+      </tr>
+      <tr>
+        <td><b>Kategorie:</b></td>
+        <td><%= @film.category.name %></td>
+      </tr>
+      <tr>
+        <td><b>Laenge:</b></td>
+        <td><%= @film.laenge %></td>
+      </tr>
+      <tr>
+        <td><b>Land:</b></td>
+        <td><%= @film.land %></td>
+      </tr>
+      <tr>
+        <td><b>Jahr:</b></td>
+        <td><%= @film.jahr %></td>
+      </tr>
+      </div>
+    </table>
+    <br><br> <br>
+
+    <%= back_to_list %>
+    <%= link_to 'Darsteller hinzufügen', darsteller_path %>
+<% end %>

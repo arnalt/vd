@@ -1,0 +1,17 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<table>
+  <tr class="ueberschrift">
+    <th>Darsteller</th>
+
+  </tr>
+  <% @darst.each do |d| %>
+      <tr>
+        <td><%= link_to d.name,  film_path(:darstId => d.id) %></td>
+      </tr>
+  <% end %>
+</table>
+<br><br>
+<%= back_to_list %>

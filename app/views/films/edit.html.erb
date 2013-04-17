@@ -1,0 +1,19 @@
+<h1>Film ändern</h1>
+
+<br><br>
+<div class="row">
+
+  <%= form_for(@film) do |f| %>
+      <%= render 'form', f: f %>
+      <br>
+
+      <div class="span2 offset3">
+        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
+      </div>
+  <% end %>
+
+</div>
+
+
+<%= link_to 'Anzeigen', @film %> |
+<%= back_to_list %>

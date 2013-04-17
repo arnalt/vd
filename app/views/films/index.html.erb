@@ -1,0 +1,36 @@
+<% if notice %>
+    <p id="notice"><%= notice %></p>
+<% end %>
+
+<h6><%= "Anzahl der Filme: " %><%= @total_films %></h6>
+<blatt>
+  <p><h6><%= will_paginate @films %></h6></p>
+</blatt>
+<table>
+
+  <% @films.each do |film| %>
+      <tr>
+        <td><%= image_tag(film.image_url) %></td>
+        <td class="list_description">
+          <dl>
+            <dt>
+            <h5> <%= film.titel %></h5></dt>
+            <dd><%= film.category.name %></dd>
+            <dd><%= film.laenge %></dd>
+            <dd><%= film.land %></dd>
+            <dd><%= film.jahr %></dd>
+            <dd><%= sanitize(text_area_tag "Darsteller", options_for_select(film.darstellers.map { |d| d.name })) %></dd>
+          </dl>
+        </td>
+        <td=class"list_actions">
+        <td><%= link_to 'Anzeigen', film %></td>
+        <td><%= link_to 'Ändern', edit_film_path(film) %></td>
+        <td><%= link_to 'Löschen', film, confirm: 'Are you sure?', method: :delete %></td>
+        </div>
+      </tr>
+  <% end %>
+</table>
+<blatt>
+  <p><h6><%= will_paginate @films %></h6></p>
+</blatt>
+
