@@ -7,6 +7,7 @@ gem 'bootstrap-will_paginate', '0.0.6'
 gem 'jquery_datepicker'
 gem 'devise', ">=1.4.4"
 gem 'dynamic_form', "~> 1.1.4"
+gem 'lazy_high_charts', '1.4.2'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

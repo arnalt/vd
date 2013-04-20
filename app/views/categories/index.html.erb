@@ -1,3 +1,26 @@
+<div id="films_chart"  style="width: 600px; height: 300px;"></div>
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        new Highcharts.Chart( {
+            chart:  {
+                renderTo: "films_chart" ,
+                type: "pie"
+            },
+            title: {
+                text: "Film-Categories"
+            } ,
+            plotOptions: {
+                pie: {
+                    startAngle: 90
+                }
+            },
+           series: [{
+                data: <%= @cat_chart.inspect %>
+            }]
+          });
+    } );
+</script>
+
 <h3>Filmkategorien verwalten</h3>
 <% if notice %>
     <p id="notice"><%= notice %></p>
