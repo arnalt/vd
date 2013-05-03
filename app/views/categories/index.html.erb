@@ -3,19 +3,14 @@
     $(function() {
         new Highcharts.Chart( {
             chart:  {
-                renderTo: "films_chart" ,
-                type: "pie"
+                renderTo: "films_chart",
+                type: 'pie'
             },
             title: {
                 text: "Film-Categories"
             } ,
-            plotOptions: {
-                pie: {
-                    startAngle: 90
-                }
-            },
            series: [{
-                data: <%= @cat_chart.inspect %>
+                data: <%= @categories.each.map { |c| [c.films.count]} %>
             }]
           });
     } );

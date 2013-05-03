@@ -2,7 +2,7 @@ class FilmsController < ApplicationController
   # GET /films
   # GET /films.json
   def index
-    @films = Film.paginate page: params[:page], order: 'Titel', per_page:4
+    @films = Film.paginate page: params[:page], order: 'Titel', per_page:10
 
     @total_films = Film.count
 
@@ -24,7 +24,7 @@ class FilmsController < ApplicationController
       @notice = "Darsteller " + p.name + " wurde gespeichert"
     end
     respond_to do |format|
-      format.html
+      format.html  { render  :layout => 'film_display.html.erb'}
       format.json { render json: @film }
     end
   end

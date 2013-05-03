@@ -1,15 +1,21 @@
 <% if @cat_name == nil %>
-    <h1>Filme anzeigen</h1>
+
     <% if @notice != nil %>
         <p id="notice"><%= @notice %></p>
     <% end %>
-    <br><br>
+    <% content_for :sidebar do %>
+        <br><br>
+        <div class ="img-polaroid">
+    <%= image_tag @film.image_url, :size => '222x314'  %>
+        </div>
+        <br>
+        <%= link_to 'Darsteller hinzufügen', darsteller_path %><br>
+        <%= back_to_list %>
+     <% end %>
     <div>
-    <table>
-      <tr>
-        <td><%= image_tag(@film.image_url+"2") %></td>
-     </tr>
-      <tr >
+    <table class="table table-bordered">
+      <br><br>
+       <tr >
         <td><b>Titel:</b></td>
         <td><%= @film.titel %></td>
       </tr>
@@ -33,6 +39,5 @@
     </table>
     <br><br> <br>
 
-    <%= back_to_list %>
-    <%= link_to 'Darsteller hinzufügen', darsteller_path %>
+
 <% end %>
