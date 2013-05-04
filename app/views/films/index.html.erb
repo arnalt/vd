@@ -6,14 +6,18 @@
 <div class="pagination pagination-mini">
   <%= will_paginate @films %>
 </div>
-<table class="table-condensed">
+<table class="table">
   <tr class="ueberschrift">
     <th>Titel</th>
     <th>Kategorie</th>
     <th>Länge</th>
     <th>Land</th>
     <th>Jahr</th>
-    <th>Darsteller</th>
+    <th></th>
+    <th></th>
+    <th></th>
+
+
 
   </tr>
   <% @films.each do |film| %>
@@ -23,7 +27,6 @@
         <td><%= film.laenge %></td>
         <td><%= film.land %></td>
         <td><%= film.jahr %></td>
-        <td><%= sanitize(text_area_tag "Darsteller", options_for_select(film.darstellers.map { |d| d.name })) %></td>
         <td=class"list_actions">
         <td><%= link_to 'Anzeigen', film %></td>
         <td><%= link_to 'Ändern', edit_film_path(film) %></td>

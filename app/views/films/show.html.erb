@@ -23,6 +23,10 @@
         <td><b>Kategorie:</b></td>
         <td><%= @film.category.name %></td>
       </tr>
+      <tr">
+        <td><b>Darsteller:</b></td>
+        <td><%= sanitize(text_area_tag "Darsteller", options_for_select(@film.darstellers.each.map { |d| d.name+";" })) %></td>
+      </tr>
       <tr>
         <td><b>Laenge:</b></td>
         <td><%= @film.laenge %></td>
