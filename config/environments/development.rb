@@ -20,9 +20,9 @@ Vd::Application.configure do
   config.action_mailer.smtp_settings = {
           :address => 'smtp.gmail.com',  
           :port => 587,
-          :domain => 'rails-expertenwissen.de',
-          :user_name => 'rails-expertenwissen@rails-expertenwissen.de',
-          :password => 'password',
+          :domain => 'gmail.com',
+          :user_name => 'klaushofer60@gmail.com',
+          :password => 'aa72aabb',
           :authentication => 'plain',
           :enable_starttls_auto => true
   }
