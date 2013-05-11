@@ -1,19 +1,16 @@
-<h1>Film ändern</h1>
+<div class="controls-row">
+  <div class="span4 offset3">
+    <h3>Film ändern</h3>
+    <%= form_for(@film) do |f| %>
+        <%= render 'form', f: f %>
+        <br>
 
-<br><br>
-<div class="row">
 
-  <%= form_for(@film) do |f| %>
-      <%= render 'form', f: f %>
-      <br>
+          <%= f.submit "Save changes", class: "btn btn-normal btn-primary" %>
 
-      <div class="span2 offset3">
-        <%= f.submit "Save changes", class: "btn btn-large btn-primary" %>
-      </div>
-  <% end %>
+    <% end %>
 
+  <%= link_to 'Anzeigen', @film %> |
+  <%= back_to_list %>
 </div>
-
-
-<%= link_to 'Anzeigen', @film %> |
-<%= back_to_list %>
+</div>

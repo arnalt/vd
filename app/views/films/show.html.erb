@@ -1,3 +1,4 @@
+
 <% if @cat_name == nil %>
 
     <% if @notice != nil %>
@@ -6,7 +7,7 @@
     <% content_for :sidebar do %>
         <br><br>
         <div class ="img-polaroid">
-    <%= image_tag @film.image_url, :size => '222x314'  %>
+    <%= image_tag @film.image_url  %>
         </div>
         <br>
         <%= link_to 'Darsteller hinzufügen', darsteller_path %><br>

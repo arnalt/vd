@@ -1,8 +1,8 @@
 Vd::Application.routes.draw do
   devise_for :users
 
-   resources :users, :only => [:show]
-   resources :films
+  resources :users, :only => [:show]
+  resources :films
   resources :categories
   resources :darstellers
 
