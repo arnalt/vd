@@ -2,21 +2,22 @@
     <p id="notice"><%= notice %></p>
 <% end %>
 <h3>Kategorie: <%= @cat_name %></h3>
-<table>
-  <tr class="ueberschrift">
+<table class="table table-bordered">
+  <tr>
     <th>Titel</th>
     <th>Länge</th>
-    <th>Darsteller</th>
     <th>Land</th>
     <th>Jahr</th>
+    <th> </th>
+
   </tr>
   <% @films.each do |film| %>
       <tr>
         <td><%= film.titel %></td>
         <td><%= film.laenge %></td>
-        <td><%= select_tag 'Darsteller', options_for_select(film.darstellers.map { |d| d.name  }), :class => 'select' %></td>
         <td><%= film.land %></td>
         <td><%= film.jahr %></td>
+        <td><%= link_to 'Anzeigen', film, :class => 'btn btn-mini' %></td>
       </tr>
   <% end %>
 </table>

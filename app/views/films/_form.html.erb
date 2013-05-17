@@ -1,22 +1,74 @@
-<%= render 'shared/error_messages' %>
+<div class="form-horizontal">
+  <%= render 'shared/error_messages' %>
 
-    <%= f.label :titel %>
-    <%= f.text_field :titel %>
 
-    <%= f.label :kategorie %>
-    <%= f.select :category_id, Category.all.map { |d| [d.name, d.id] }, prompt: "Bitte wählen Sie" %>
+  <div class="control-group">
+    <label class="control-label"><%= f.label :titel   %></label>
 
-    <%= f.label :laenge %>
-    <%= f.number_field :laenge %>
+    <div class="controls">
+      <%= f.text_field :titel, :class=>"span8" %>
+    </div>
+  </div>
 
-    <%= f.label :land %>
-    <%= f.text_field :land %>
 
-    <%= f.label :jahr %>
-    <%= f.number_field :jahr %>
+  <div class="control-group">
+    <label class="control-label"><%= f.label :kategorie %></label>
 
-    <%= f.label :image_url %>
-    <%= f.text_field :image_url %>
+    <div class="controls">
+      <%= f.select :category_id, Category.all.map { |d| [d.name, d.id] }, prompt: "Bitte wählen Sie" %>
+    </div>
+  </div>
+
+
+  <div class="control-group">
+    <label class="control-label"><%= f.label :laenge %></label>
+
+    <div class="controls">
+      <%= f.number_field :laenge %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label"> <%= f.label :land %></label>
+
+    <div class="controls">
+      <%= f.text_field :land %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label"><%= f.label :jahr %></label>
+
+    <div class="controls">
+      <%= f.number_field :jahr %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label"> <%= f.label :beschreibung %></label>
+
+    <div class="controls">
+      <%= f.text_area :description, :rows => 5, :class=>"span8" %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label"> <%= f.label :image_url %></label>
+
+    <div class="controls">
+      <%= f.text_field :image_url %>>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
 
 
 

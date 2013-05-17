@@ -1,14 +1,11 @@
-<div class="controls-row">
-  <div class="span4 offset3">
-    <h3>Film hinzufügen</h3>
+<div class="offset2"><h3>Film hinzufügen</h3></div>
+<br>
+<%= form_for(@film) do |f| %>
+    <%= render 'form', f: f %>
     <br>
-    <%= form_for(@film) do |f| %>
-        <%= render 'form', f: f %>
-        <br>
-        <%= f.submit "Create film", class: "btn btn-normall btn-primary" %>
-    <% end %>
-
-  </div>
+    <div class="offset2"><%= f.submit "Create film", class: "btn btn-normall btn-primary" %></div>
+<% end %>
+<div class="offset2"><%= back_to_list %></div>
 </div>
 
-<%= back_to_list %>
+

@@ -10,7 +10,7 @@
                 text: "Film-Categories"
             } ,
            series: [{
-                data: <%= @categories.each.map { |c| [c.films.count]} %>
+                data: [["Action", 53], ["Thriller", 21], ["Abenteuer", 19], ["TV-Film", 0], ["Drama", 57], ["Western", 2], ["Eastern", 0], ["Krimi", 12], ["Dokumentation", 4]]
             }]
           });
     } );

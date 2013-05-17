@@ -17,7 +17,7 @@ class FilmsController < ApplicationController
   def show
 
     @film = Film.find(params[:id])
-
+     @video = 'http://youtu.be/wm3684id5DA'
     if params[:darstId] != nil
       p = Darsteller.find(params[:darstId])
       @film.darstellers << p

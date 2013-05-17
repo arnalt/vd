@@ -3,7 +3,6 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-   @cat_chart = @categories.each.map { |c| [c.name, c.films.count]}
 
     respond_to do |format|
       format.html # index.html.erb
