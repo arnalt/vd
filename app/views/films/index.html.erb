@@ -1,42 +1,14 @@
 <% if notice %>
     <p id="notice"><%= notice %></p>
 <% end %>
-
-<h6><%= "Anzahl der Filme: " %><%= @total_films %></h6>
-<div class="pagination pagination-mini">
-  <%= will_paginate @films %>
-</div>
-<table class="table">
-  <tr class="ueberschrift">
-    <th>Titel</th>
-    <th>Kategorie</th>
-    <th>Länge</th>
-    <th>Land</th>
-    <th>Jahr</th>
-    <th></th>
-    <th></th>
-    <th></th>
-
-
-
-  </tr>
-  <% @films.each do |film| %>
+<%= form_tag films_path, :method => 'get', :id => "films_search" do %>
+    <table class="table table-bordered">
       <tr>
-       <td><%= image_tag film.image_url, :size => '16x16'  %></td>
-        <td><%= film.titel %></td>
-        <td><%= film.category.name %></td>
-        <td><%= film.laenge %></td>
-        <td><%= film.land %></td>
-        <td><%= film.jahr %></td>
-        <td><%= link_to 'Anzeigen', film, :class => 'btn btn-mini' %></td>
-        <td><%= link_to 'Ändern', edit_film_path(film), :class=>'btn btn-mini' %></td>
-        <td><%= link_to 'Löschen', film, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini' %></td>
-        </div>
+        <td><%= text_field_tag :search, params[:search] %>
+               <%= submit_tag "Search", :name => nil, class: "btn btn-mini btn-primary" %></td>
+        <td><b><%= "Anzahl der Filme: " %><%= @total_films %></b></td>
       </tr>
-  <% end %>
-</table>
-<%= link_to 'Film hinzufügen', new_film_path %>
-<div class="pagination pagination-mini">
-  <%= will_paginate @films %>
-</div>
+    </table>
+    <div id="films"><%= render 'films' %></div>
+<% end %>
 

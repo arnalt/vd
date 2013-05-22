@@ -6,6 +6,7 @@
         <ul class="nav pull-right">
           <% if user_signed_in? %>
               <li><%= link_to 'Filme', films_path %></li>
+              <li><%= link_to 'Clips', clips_path %></li>
               <li> <%= link_to "Kategorie", categories_path %></li>
               <li><%= link_to 'Darsteller', darstellers_path %></li>
               <li><%= link_to "Logout", destroy_user_session_path %></li>

@@ -1,9 +1,11 @@
 class FilmsController < ApplicationController
+  helper_method :sort_column, :sort_direction
+
   # GET /films
   # GET /films.json
   def index
-    @films = Film.paginate page: params[:page], order: 'Titel', per_page:10
-
+  #  @films = Film.paginate page: params[:page], order: 'Titel', per_page:10
+    @films = Film.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
     @total_films = Film.count
 
     respond_to do |format|
@@ -17,7 +19,7 @@ class FilmsController < ApplicationController
   def show
 
     @film = Film.find(params[:id])
-     @video = 'http://youtu.be/wm3684id5DA'
+
     if params[:darstId] != nil
       p = Darsteller.find(params[:darstId])
       @film.darstellers << p
@@ -88,5 +90,29 @@ class FilmsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
+  def sort_column
+    Film.column_names.include?(params[:sort]) ? params[:sort] : "titel"
+  end
+
+  def sort_direction
+    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
+  end
+
+  def play
+    @film =  Film.find(params[:id]).titel.to_s
+     @filename =  "C:\\Users\\vlc.bat "+ Film.find(params[:id]).film_url.to_s
+  end
+
+  def darst_del
+       @film = Film.find(params[:id])
+       @film.darstellers.clear
+       respond_to do |format|
+            format.html { redirect_to @film, notice: 'Film was successfully updated.' }
+   end
+
+  end
+
+
 end
 

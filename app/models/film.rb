@@ -4,4 +4,12 @@ class Film < ActiveRecord::Base
 
   validates :titel, :laenge, :land, :jahr, presence: true
   validates :titel, uniqueness: true
+
+  def self.search(search)
+    if search
+      where('titel LIKE ?', "%#{search}%")
+    else
+      scoped
+    end
+  end
 end

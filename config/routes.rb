@@ -1,10 +1,18 @@
 Vd::Application.routes.draw do
+
+
   devise_for :users
 
   resources :users, :only => [:show]
-  resources :films
   resources :categories
   resources :darstellers
+  resources :clips
+  resources :films do
+        collection do
+         get 'play/:id'  => "films#play", :as  => :film_play
+          get 'darst_del/:id' => "films#darst_del", :as => :darst_del
+       end
+  end
 
   devise_for :users, :skip => [:sessions] do
     get "login" => "devise/sessions#new", :as => :new_user_session

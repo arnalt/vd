@@ -11,10 +11,18 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516122628) do
+ActiveRecord::Schema.define(:version => 20130521093735) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  create_table "clips", :force => true do |t|
+    t.string   "clipname"
+    t.string   "actor"
+    t.string   "clip_url"
     t.datetime "created_at", :null => false
     t.datetime "updated_at", :null => false
   end
@@ -40,6 +48,7 @@ ActiveRecord::Schema.define(:version => 20130516122628) do
     t.integer  "category_id"
     t.string   "image_url"
     t.text     "description"
+    t.string   "film_url"
   end
 
   create_table "users", :force => true do |t|

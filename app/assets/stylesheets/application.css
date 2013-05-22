@@ -12,3 +12,20 @@
  *= require_tree .
 */
 /*
+ *= require mediaelement_rails
+ * and optionally:
+ *= require mediaelement_rails/mejs-skins
+ */
+.pretty th .current {
+    padding-right: 12px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.pretty th .asc {
+    background-image: url(/images/up_arrow.gif);
+}
+
+.pretty th .desc {
+    background-image: url(/images/down_arrow.gif);
+}

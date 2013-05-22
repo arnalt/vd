@@ -1,4 +1,4 @@
-<% if @film.errors.any? %>
+<% if @user.errors.any? %>
     <div id="error_explanation">
       <div class="alert alert-error">
         The form contains <%= pluralize(@user.errors.count, "error") %>.
@@ -9,4 +9,17 @@
         <% end %>
       </ul>
     </div>
+    <% else %>
+    <% if @films.errors.any? %>
+        <div id="error_explanation">
+          <div class="alert alert-error">
+            The form contains <%= pluralize(@films.errors.count, "error") %>.
+          </div>
+          <ul>
+            <% @films.errors.full_messages.each do |msg| %>
+                <li>* <%= msg %></li>
+            <% end %>
+          </ul>
+        </div>
+        <% end %>
 <% end %>
