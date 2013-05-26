@@ -1,0 +1,31 @@
+<%= hidden_field_tag :direction, params[:direction] %>
+<%= hidden_field_tag :sort, params[:sort] %>
+<table class="table table-condensed table-bordered">
+  <tr class="ueberschrift">
+    <th></th>
+    <th><%= sortable "titel" %></th>
+    <th>Kategorie</th>
+    <th>Länge</th>
+    <th>Land</th>
+    <th>Jahr</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+  <% @films.each do |film| %>
+      <tr>
+        <td><%= image_tag film.image_url, :size => '16x16'  %></td>
+        <td><%= film.titel %></td>
+        <td><%= film.category.name %></td>
+        <td><%= film.laenge %></td>
+        <td><%= film.land %></td>
+        <td><%= film.jahr %></td>
+        <td><%= link_to 'Anzeigen', film, :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Ändern', edit_film_path(film), :class=>'btn btn-mini' %></td>
+        <td><%= link_to 'Löschen', film, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini' %></td>
+      </tr>
+  <% end %>
+</table>
+<div class="pagination pagination-mini">
+  <%= link_to 'Film hinzufügen', new_film_path %><%= will_paginate @films %>
+</div>

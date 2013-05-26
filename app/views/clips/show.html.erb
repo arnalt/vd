@@ -1,0 +1,22 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Clipname:</b>
+  <%= @clip.clipname %>
+</p>
+
+<p>
+  <b>Actor:</b>
+  <%= @clip.actor %>
+</p>
+
+<p>
+  <b>Clip url:</b>
+  <%= @clip.clip_url %>
+</p>
+
+
+<iframe width="640" height="360" src="<%=@clip.clip_url %>" frameborder="0" allowfullscreen></iframe> <br>
+
+<%= link_to 'Edit', edit_clip_path(@clip) %> |
+<%= link_to 'Back', clips_path %>

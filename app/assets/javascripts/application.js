@@ -14,16 +14,5 @@
 //= require jquery_ujs
 //= require jquery-ui
 //= require bootstrap
-//= require mediaelement_rails
 //= require_tree .
 
-$(function() {
-    $("#films th a, #films .pagination a").live("click", function() {
-        $.getScript(this.href);
-        return false;
-    });
-    $("#films_search input").keyup(function() {
-        $.get($("#films_search").attr("action"), $("#films_search").serialize(), null, "script");
-        return false;
-    });
-});

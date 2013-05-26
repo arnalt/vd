@@ -76,7 +76,7 @@ class CategoriesController < ApplicationController
   def destroy
     @category = Category.find(params[:id])
     @category.destroy
-    flash[notice] = 'Darsteller wurden gelöscht.'
+    flash[notice] = 'Darsteller wurden geloescht.'
     redirect_to darsteller_path
 end
 
