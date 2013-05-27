@@ -2,7 +2,7 @@ class ClipsController < ApplicationController
   # GET /clips
   # GET /clips.json
   def index
-    @clips = Clip.paginate page: params[:page], order: 'clipname', per_page: 8
+    @clips = Clip.all
 
     respond_to do |format|
       format.html # index.html.erb

@@ -1,28 +1,29 @@
 <h1>Musikclips</h1>
-<div class="pagination pagination-mini">
-  <%= will_paginate @clips %>
-</div>
-<table class="table table-condensed table-bordered">
+
+<table id="clips" class="display">
+  <thead>
   <tr>
     <th>Clipname</th>
     <th>Actor</th>
+    <th>Art</th>
     <th>Clip url</th>
     <th></th>
     <th></th>
     <th></th>
   </tr>
+  </thead>
+  <tbody>
 <% @clips.each do |clip| %>
   <tr>
     <td><%= clip.clipname %></td>
     <td><%= clip.actor %></td>
+    <td><%= clip.movie_type %></td>
     <td><%= clip.clip_url %></td>
     <td><%= link_to 'Show', clip %></td>
     <td><%= link_to 'Edit', edit_clip_path(clip) %></td>
     <td><%= link_to 'Destroy', clip, confirm: 'Are you sure?', method: :delete %></td>
   </tr>
 <% end %>
+  </tbody>
 </table>
-<div class="pagination pagination-mini">
-  <%= will_paginate @clips %>
-</div>
 <%= link_to 'Neuer Clip', new_clip_path %>

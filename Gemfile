@@ -8,7 +8,8 @@ gem 'jquery_datepicker'
 gem 'devise', ">=1.4.4"
 gem 'dynamic_form', "~> 1.1.4"
 gem 'lazy_high_charts', '1.4.2'
-gem 'mediaelement_rails', '0.5.1'
+gem 'jquery-datatables-rails',  git: 'git://github.com/rweng/jquery-datatables-rails.git'
+gem 'jquery-ui-rails', '4.0.3'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

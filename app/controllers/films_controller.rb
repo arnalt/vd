@@ -5,7 +5,7 @@ class FilmsController < ApplicationController
   # GET /films.json
   def index
   #  @films = Film.paginate page: params[:page], order: 'Titel', per_page:10
-    @films = Film.search(params[:search]).order(sort_column + " " + sort_direction).paginate(:per_page => 10, :page => params[:page])
+    @films = Film.all
     @total_films = Film.count
 
     respond_to do |format|
