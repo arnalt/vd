@@ -5,11 +5,13 @@ class Film < ActiveRecord::Base
   validates :titel, :laenge, :land, :jahr, presence: true
   validates :titel, uniqueness: true
 
-  def self.search(search)
-    if search
-      where('titel LIKE ?', "%#{search}%")
-    else
-      scoped
-    end
+  def self.give_next_film(filmid)
+    where("id > ? ", filmid).order("id ASC" )
   end
+
+  def self.give_prev_film(filmid)
+    where("id <  ?", filmid).order("id DESC")
+  end
+
+
 end

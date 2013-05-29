@@ -1,9 +1,10 @@
 class ClipsController < ApplicationController
+
   # GET /clips
   # GET /clips.json
   def index
-    @clips = Clip.all
 
+     @clips = Clip.all
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @clips }
@@ -13,7 +14,7 @@ class ClipsController < ApplicationController
   # GET /clips/1
   # GET /clips/1.json
   def show
-    @clip = Clip.find(params[:id])
+     @clip = Clip.find(params[:id])
 
     respond_to do |format|
       format.html # show.html.erb
@@ -80,4 +81,5 @@ class ClipsController < ApplicationController
       format.json { head :no_content }
     end
   end
+
 end

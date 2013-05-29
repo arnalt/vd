@@ -5,3 +5,4 @@ jQuery ->
   $('#films').dataTable
     sPaginationType: "full_numbers"
     bJQueryUI: true
+    iDisplayLength: 25

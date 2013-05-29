@@ -13,6 +13,8 @@
         <%= link_to 'Darsteller hinzufügen', darsteller_path %><br>
         <%= link_to 'Darsteller löschen', darst_del_films_path %><br>
         <%= link_to 'Film spielen', film_play_films_path %><br>
+        <%= link_to 'nächster Film ', nextfilm_films_path(@film),:class => 'btn btn-mini' , :style => "width:75px" %><br>
+        <%= link_to 'vorheriger Film ', prevfilm_films_path(@film),:class => 'btn btn-mini', :style => "width:75px" %><br>
         <%= back_to_list %>
      <% end %>
     <div>

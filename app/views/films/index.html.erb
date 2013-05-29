@@ -4,6 +4,7 @@
 <table  id="films" class="display">
   <thead>
   <tr>
+    <th>ID</th>
     <th>Titel</th>
     <th>Kategorie</th>
     <th>Länge</th>
@@ -17,6 +18,7 @@
   <tbody>
   <% @films.each do |film| %>
       <tr>
+        <td><%= film.id %></td>
         <td><%= film.titel %></td>
         <td><%= film.category.name %></td>
         <td><%= film.laenge %></td>

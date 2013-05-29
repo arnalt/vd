@@ -1,11 +1,10 @@
 class FilmsController < ApplicationController
-  helper_method :sort_column, :sort_direction
+
 
   # GET /films
   # GET /films.json
   def index
-  #  @films = Film.paginate page: params[:page], order: 'Titel', per_page:10
-    @films = Film.all
+    @films = Film.order("id")
     @total_films = Film.count
 
     respond_to do |format|
@@ -17,19 +16,18 @@ class FilmsController < ApplicationController
   # GET /films/1
   # GET /films/1.json
   def show
+      @film = Film.find(params[:id])
 
-    @film = Film.find(params[:id])
-
-    if params[:darstId] != nil
-      p = Darsteller.find(params[:darstId])
-      @film.darstellers << p
-      @notice = "Darsteller " + p.name + " wurde gespeichert"
-    end
-    respond_to do |format|
-      format.html  { render  :layout => 'film_display.html.erb'}
-      format.json { render json: @film }
-    end
-  end
+      if params[:darstId] != nil
+        p = Darsteller.find(params[:darstId])
+        @film.darstellers << p
+        @notice = "Darsteller " + p.name + " wurde gespeichert"
+      end
+      respond_to do |format|
+        format.html  { render  :layout => 'film_display.html.erb'}
+        format.json { render json: @film }
+      end
+   end
 
   # GET /films/new
   # GET /films/new.json
@@ -91,13 +89,6 @@ class FilmsController < ApplicationController
     end
   end
 
-  def sort_column
-    Film.column_names.include?(params[:sort]) ? params[:sort] : "titel"
-  end
-
-  def sort_direction
-    %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
-  end
 
   def play
     @film =  Film.find(params[:id]).titel.to_s
@@ -112,7 +103,29 @@ class FilmsController < ApplicationController
    end
 
   end
-
-
+def nextfilm
+     film_alt = Film.find(params[:id])
+     @film = Film.give_next_film(params[:id].to_s.to_i).at(0)
+     if @film.nil?
+       flash[:error] = 'Letzter Datensatz erreicht'
+       @film = film_alt
+     end
+       respond_to do |format|
+         format.html  { render 'show.html.erb',  :layout => 'film_display.html.erb'}
+         format.json { render json: @film }
+       end
 end
 
+  def prevfilm
+    film_alt = Film.find(params[:id])
+    @film = Film.give_prev_film(params[:id].to_s.to_i).at(0)
+    if @film.nil?
+      flash[:error] = 'Erster Datensatz erreicht'
+      @film = film_alt
+    end
+      respond_to do |format|
+        format.html  { render 'show.html.erb',  :layout => 'film_display.html.erb'}
+        format.json { render json: @film }
+      end
+  end
+ end

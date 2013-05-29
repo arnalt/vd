@@ -10,7 +10,9 @@ Vd::Application.routes.draw do
   resources :films do
         collection do
          get 'play/:id'  => "films#play", :as  => :film_play
-          get 'darst_del/:id' => "films#darst_del", :as => :darst_del
+         get 'darst_del/:id' => "films#darst_del", :as => :darst_del
+         get 'nextfilm/:id'  => "films#nextfilm", :as => :nextfilm
+         get 'prevfilm/:id'  => "films#prevfilm", :as => :prevfilm
        end
   end
 
