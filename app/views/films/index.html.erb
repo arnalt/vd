@@ -24,12 +24,14 @@
         <td><%= film.laenge %></td>
         <td><%= film.land %></td>
         <td><%= film.jahr %></td>
-        <td><%= link_to 'Anzeigen', film, :class => 'btn btn-mini' %></td>
-        <td><%= link_to 'Ändern', edit_film_path(film), :class=>'btn btn-mini' %></td>
-        <td><%= link_to 'Löschen', film, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Show', film, :class => 'btn btn-mini' %></td>
+        <td><%= link_to 'Edit', edit_film_path(film), :class=>'btn btn-mini' %></td>
+        <td><%= link_to 'Delete', film, confirm: 'Are you sure?', method: :delete, :class => 'btn btn-mini' %></td>
       </tr>
   <% end %>
   </tbody>
 </table>
+<br>
+<%= link_to 'New Film', new_film_path %>
 
 
