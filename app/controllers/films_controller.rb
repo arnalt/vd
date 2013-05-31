@@ -1,5 +1,5 @@
 class FilmsController < ApplicationController
-
+  before_filter :authenticate_user!
 
   # GET /films
   # GET /films.json
