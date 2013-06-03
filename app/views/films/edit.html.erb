@@ -1,5 +1,5 @@
 <div class="offset2"><h3>Film ändern</h3></div>
-<%= form_for(@film) do |f| %>
+<%= form_for @film, :html => { :multipart => true } do |f| %>
     <%= render 'form', f: f %>
     <br>
     <div class="offset2"><%= f.submit "Save changes", class: "btn btn-normal btn-primary" %></div>

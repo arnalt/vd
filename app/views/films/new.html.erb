@@ -1,6 +1,6 @@
 <div class="offset2"><h3>Film hinzufügen</h3></div>
 <br>
-<%= form_for(@film) do |f| %>
+<%= form_for @film, :html => { :multipart => true } do |f| %>
     <%= render 'form', f: f %>
     <br>
     <div class="offset2"><%= f.submit "Create film", class: "btn btn-normall btn-primary" %></div>

@@ -51,10 +51,10 @@
   </div>
 
   <div class="control-group">
-    <label class="control-label"> <%= f.label :image_url %></label>
+    <label class="control-label"> <%= f.label :photo %></label>
 
     <div class="controls">
-      <%= f.text_field :image_url %>
+      <%= f.text_field :photo_file_name, :readonly => true %>
     </div>
   </div>
 
@@ -63,6 +63,14 @@
 
     <div class="controls">
       <%= f.text_field :film_url %>
+    </div>
+  </div>
+
+  <div class="control-group">
+    <label class="control-label"> <%= f.label :photo %></label>
+
+    <div class="controls">
+      <%= f.file_field :photo %>
     </div>
   </div>
 

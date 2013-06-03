@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130528074716) do
+ActiveRecord::Schema.define(:version => 20130603074350) do
 
   create_table "categories", :force => true do |t|
     t.string   "name"
@@ -44,12 +44,15 @@ ActiveRecord::Schema.define(:version => 20130528074716) do
     t.integer  "laenge"
     t.string   "land"
     t.integer  "jahr"
-    t.datetime "created_at",  :null => false
-    t.datetime "updated_at",  :null => false
+    t.datetime "created_at",         :null => false
+    t.datetime "updated_at",         :null => false
     t.integer  "category_id"
-    t.string   "image_url"
     t.text     "description"
     t.string   "film_url"
+    t.string   "photo_file_name"
+    t.string   "photo_content_type"
+    t.integer  "photo_file_size"
+    t.datetime "photo_updated_at"
   end
 
   create_table "users", :force => true do |t|

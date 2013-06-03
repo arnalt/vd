@@ -10,6 +10,7 @@ gem 'dynamic_form', "~> 1.1.4"
 gem 'lazy_high_charts', '1.4.2'
 gem 'jquery-datatables-rails',  git: 'git://github.com/rweng/jquery-datatables-rails.git'
 gem 'jquery-ui-rails', '4.0.3'
+gem 'paperclip', git: 'git://github.com/thoughtbot/paperclip.git'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

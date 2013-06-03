@@ -5,6 +5,17 @@ GIT
     jquery-datatables-rails (1.11.2)
       jquery-rails
 
+GIT
+  remote: git://github.com/thoughtbot/paperclip.git
+  revision: f55173018e246f2f8c196474cb85c7288491644c
+  specs:
+    paperclip (3.4.2)
+      activemodel (>= 3.0.0)
+      activerecord (>= 3.0.0)
+      activesupport (>= 3.0.0)
+      cocaine (~> 0.5.0)
+      mime-types
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -43,6 +54,10 @@ GEM
     bootstrap-will_paginate (0.0.6)
       will_paginate
     builder (3.0.4)
+    climate_control (0.0.3)
+      activesupport (>= 3.0)
+    cocaine (0.5.1)
+      climate_control (>= 0.0.3, < 1.0)
     coffee-rails (3.2.2)
       coffee-script (>= 2.2.0)
       railties (~> 3.2.0)
@@ -159,6 +174,7 @@ DEPENDENCIES
   jquery-ui-rails (= 4.0.3)
   jquery_datepicker
   lazy_high_charts (= 1.4.2)
+  paperclip!
   pg
   rails (= 3.2.1)
   rspec-rails (= 2.11.0)
