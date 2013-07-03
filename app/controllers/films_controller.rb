@@ -92,7 +92,7 @@ class FilmsController < ApplicationController
 
   def play
     @film =  Film.find(params[:id]).titel.to_s
-     @filename =  "C:\\Users\\vlc.bat "+ Film.find(params[:id]).film_url.to_s
+     @filename =  'C:\\"Program Files"\\VideoLAN\\VLC\\vlc.exe '+ Film.find(params[:id]).film_url.to_s
   end
 
   def darst_del
