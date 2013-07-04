@@ -20,6 +20,10 @@
 <% if notice %>
     <p id="notice"><%= notice %></p>
 <% end %>
+<div>
+    Anzahl Filme: <%= @films.count %>
+</div>  
+<br>   
 <table>
   <tr class="ueberschrift">
     <th>Name</th>
@@ -36,6 +40,7 @@
         <td><%= link_to 'Destroy', category, confirm: 'Are you sure?', method: :delete %></td>
       </tr>
   <% end %>
+
 </table>
 
 <br />

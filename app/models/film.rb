@@ -3,7 +3,7 @@ class Film < ActiveRecord::Base
   has_and_belongs_to_many :darstellers
   has_attached_file :photo
 
-  validates :titel, :laenge, :land, :jahr, presence: true
+  validates :titel, :laenge, :land, :jahr, :category_id, presence: true
   validates :titel, uniqueness: true
 
   def self.give_next_film(filmid)

@@ -3,7 +3,7 @@ class CategoriesController < ApplicationController
   # GET /categories.json
   def index
     @categories = Category.all
-
+    @films = Film.all 
     respond_to do |format|
       format.html # index.html.erb
       format.json { render json: @categories }
